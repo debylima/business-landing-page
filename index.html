@@ -8,6 +8,7 @@
 body{
   margin:0;
   font-family: Arial, sans-serif;
+  background:#f8f9fa;
 }
 
 header{
@@ -20,14 +21,20 @@ header{
 section{
   max-width:900px;
   margin:auto;
-  padding:40px;
+  padding:40px 20px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
 }
 
 .services div{
-  background:#f3f3f3;
+  background:white;
   border-radius:8px;
   padding:20px;
-  margin:12px 0;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 .btn{
@@ -37,49 +44,96 @@ section{
   border-radius:6px;
   text-decoration:none;
   display:inline-block;
-  margin-top:15px;
+  margin:15px 0;
+  border:none;
+  cursor:pointer;
 }
 
 .btn:hover{
   background:#157347;
 }
-</style>
 
+form{
+  max-width:400px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  border-radius:8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+input, textarea{
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border-radius:5px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+footer{
+  background:#0d6efd;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-<h1>Tech Solutions</h1>
-<p>Modern websites for modern businesses.</p>
-
-<a class="btn"
+  <h1>Tech Solutions</h1>
+  <p>Modern websites for modern businesses.</p>
+  <a class="btn"
    href="https://mail.google.com/mail/?view=cm&to=silveiralima.d@gmail.com"
    target="_blank">
    Request a Quote
-</a>
-
+  </a>
 </header>
 
 <section>
 <h2>Our Services</h2>
 
 <div class="services">
-<div>💻 Website Development</div>
-<div>📱 Responsive Design</div>
-<div>⚡ Performance Optimization</div>
-<div>🔒 Secure Systems</div>
+  <div>💻 Website Development</div>
+  <div>📱 Responsive Design</div>
+  <div>⚡ Performance Optimization</div>
+  <div>🔒 Secure Systems</div>
 </div>
 </section>
 
 <section>
-<h2>About Us</h2>
+<h2>Contact</h2>
 
-<p>
-We build fast, modern and responsive websites using
-HTML, CSS and JavaScript.
-</p>
+<form id="contactForm">
+  <input type="text" placeholder="Your name" required>
+  <input type="email" placeholder="Your email" required>
+  <textarea placeholder="Your message" required></textarea>
+
+  <button class="btn" type="submit">
+    Send Message
+  </button>
+</form>
 </section>
+
+<footer>
+  © 2024 — Tech Solutions
+</footer>
+
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(event){
+  event.preventDefault();
+
+  alert("✅ Message sent successfully! (simulation)");
+
+  form.reset();
+});
+</script>
 
 </body>
 </html>
+
 
